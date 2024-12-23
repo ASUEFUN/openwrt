@@ -62,6 +62,11 @@ export auto_kernel="true"
 export rootfs_size="2560"
 export kernel_usage="stable"
 
+# 取消注释 Feed 源
+sed -i 's/^#\(.*5G-Modem-Support\)/\1/' feeds.conf.default
+
+# 添加 Feed 源
+echo 'src-git 5G-Modem-Support https://github.com/Siriling/5G-Modem-Support?tab=readme-ov-file' >>feeds.conf.default
 
 
 # 修改插件名字
